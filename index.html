@@ -114,18 +114,21 @@
   socket.on('status_change', function(new_status){
     console.log('new status:' +  new_status);
 
+    var delayTimer;
+
     if (window.status != new_status) {
       if(started) {
         // if status = 1, add in delay
         if (new_status == 1) {
           randomDelay = getRandomInInterval(0, 20000);
           console.log(randomDelay);
-          setTimeout(function(){ 
+          delayTimer = setTimeout(function(){ 
             window.status = 1;
             load_section(new_status); 
           }, randomDelay);
         }
         else {
+          clearTimeout(delayTimer);
           window.status = new_status;
           load_section(new_status);
         }
