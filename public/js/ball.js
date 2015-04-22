@@ -73,7 +73,6 @@ function ball() {
 
 		orientationControl.listen(function() {
 
-
 			if (stop) {
 				orientationControl.stop();
 			}
