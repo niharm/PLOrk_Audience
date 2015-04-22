@@ -176,8 +176,8 @@
   function setRandomDrum() {
     var numberOfDrums = 3;
     randomDrum = Math.floor(Math.random()*5) + 1;
-
-    var drumColors = ["red", "red", "orange", "yellow", "green" "blue" ]
+    console.log('drum: ' + randomDrum);
+    var drumColors = ["red", "red", "orange", "yellow", "green", "blue"]
     $('.colors').css('background-color', drumColors[randomDrum]);
 
   };
