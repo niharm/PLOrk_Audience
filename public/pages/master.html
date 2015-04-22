@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>Socket Master</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<h1>Secret Socket Master!</h1>
+	<br>
+	<input type="button" class="btn btn-default btn-lg" onclick="send_status(0);" value="Status 0"/><br>
+	<input type="button" class="btn btn-default btn-lg" onclick="send_status(1);" value="Status 1"/><br>
+	<input type="button" class="btn btn-default btn-lg" onclick="send_status(2);" value="Status 2"/><br>
+	<input type="button" class="btn btn-default btn-lg" onclick="send_status(3);" value="Status 3"/><br>
+
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
+	<script> 
+
+	  var socket = io();
+
+	  function send_status(status) {
+	    socket.emit('set_status', status);
+	  };
+
+	</script>
+</body>
+</html>

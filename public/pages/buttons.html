@@ -1,0 +1,43 @@
+<table class="full-table">
+  <tbody>
+    <tr></tr>
+    <tr>
+      <td><button type="button" class="btn btn-danger btn-block big_button" onclick="send_inc('0 0');"> + </button></td> <!-- 1-->
+      <td><button type="button" class="btn btn-danger btn-block big_button" onclick="send_inc('1 0');"> + </button></td> 
+      <td><button type="button" class="btn btn-danger btn-block big_button" onclick="send_inc('2 0');"> + </button></td>
+      <td><button type="button" class="btn btn-danger btn-block big_button" onclick="send_inc('3 0');"> + </button></td>
+      <td><button type="button" class="btn btn-danger btn-block big_button" onclick="send_inc('4 0');"> + </button></td> <!-- 5 -->
+      <td><button type="button" class="btn btn-danger btn-block big_button" onclick="send_inc('5 0');"> + </button></td>
+      <td><button type="button" class="btn btn-danger btn-block big_button" onclick="send_inc('6 0');"> + </button></td>
+      <td><button type="button" class="btn btn-danger btn-block big_button" onclick="send_inc('7 0');"> + </button></td>
+    </tr>
+    <tr>
+      <td><button type="button" class="btn btn-warning btn-block big_button" onclick="send_dec('0 0');"> - </button></td> <!-- 1-->
+      <td><button type="button" class="btn btn-warning btn-block big_button" onclick="send_dec('1 0');"> - </button></td> 
+      <td><button type="button" class="btn btn-warning btn-block big_button" onclick="send_dec('2 0');"> - </button></td>
+      <td><button type="button" class="btn btn-warning btn-block big_button" onclick="send_dec('3 0');"> - </button></td>
+      <td><button type="button" class="btn btn-warning btn-block big_button" onclick="send_dec('4 0');"> - </button></td> <!-- 5 -->
+      <td><button type="button" class="btn btn-warning btn-block big_button" onclick="send_dec('5 0');"> - </button></td>
+      <td><button type="button" class="btn btn-warning btn-block big_button" onclick="send_dec('6 0');"> - </button></td>
+      <td><button type="button" class="btn btn-warning btn-block big_button" onclick="send_dec('7 0');"> - </button></td>
+    </tr>
+    <tr></tr>
+
+  </tbody>
+</table>
+
+<script>
+
+  function send_inc(coordinates) {
+    coordinates = randomDrum.toString() + " " + coordinates;
+    socket.emit('inc', coordinates);
+    console.log('inc sent', coordinates)
+  };
+
+  function send_dec(coordinates) {
+    coordinates = randomDrum.toString() + " " + coordinates;
+    socket.emit('dec', coordinates);
+    console.log('dec sent', coordinates)
+  };
+
+</script>
