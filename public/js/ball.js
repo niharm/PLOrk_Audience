@@ -88,7 +88,7 @@ function ball() {
 			// if status is 1, handle colors here. otherwise, handle in noise_motion.js
 			if (status == 1) {
 				// converts -1 to 1 to 0 to 240 hues
-				tiltHue = parseInt((turn + 1)/2.0 * 240);
+				tiltHue = (parseInt((turn + 1)/2.0 * 240) + 240) % 360;
 				$('.colors').css('background-color',  "hsl(" + tiltHue + ", 100%, 50%)");
 			}
 
