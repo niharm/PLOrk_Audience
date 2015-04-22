@@ -18,6 +18,11 @@ app.get('/master', function (req, res) {
   res.sendFile(__dirname + '/public/pages/master.html');
 });
 
+// will match requests to /about
+app.get('/exit', function (req, res) {
+  res.sendFile(__dirname + '/public/pages/exit.html');
+});
+
 app.use(express.static('public'));
 
 ////////////////

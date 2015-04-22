@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title>Socket Master</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<h1>Secret Socket Exiter!</h1>
+
+	<input type="button" class="btn btn-default btn-lg" onclick="send_status(4);" value="CAREFUL STATUS 4"/><br>
+
+	<input type="button" class="btn btn-default btn-lg" onclick="send_status(9);" value="CAREFUL STATUS 9"/><br>
+
+	<script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+
+	<script> 
+
+	  var socket = io();
+
+	  function send_status(status) {
+	    socket.emit('set_status', status);
+	  };
+
+	</script>
+</body>
+</html>

@@ -175,9 +175,9 @@
   var randomDrum;
   function setRandomDrum() {
     var numberOfDrums = 3;
-    randomDrum = Math.floor(Math.random()*3);
+    randomDrum = Math.floor(Math.random()*5) + 1;
 
-    var drumColors = ["red", "blue", "green"]
+    var drumColors = ["red", "red", "orange", "yellow", "green" "blue" ]
     $('.colors').css('background-color', drumColors[randomDrum]);
 
   };
@@ -221,6 +221,14 @@
       setRandomDrum();
       $("#buttons").removeClass('hide-element');
       $("#buttons" ).load( "/pages/buttons.html" );      
+    }
+
+    else if (status == 4) {
+      $('.colors').css('background-color', 'black');   
+    }
+
+    else if (status = 9) {
+      window.location = "http://www.google.com";
     }
 
   };
