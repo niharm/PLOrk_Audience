@@ -118,8 +118,9 @@
       window.status = new_status;
       if(started) {
         // if status = 1, add in delay
-        if (status === 1) {
-          randomDelay = getRandomInInterval(0, 5);
+        if (status == 1) {
+          randomDelay = getRandomInInterval(0, 20000);
+          console.log(randomDelay);
           setTimeout(function(){ 
             load_section(new_status); 
           }, randomDelay);
